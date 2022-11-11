@@ -10,11 +10,11 @@ A aplicação é baseada em somente uma tela, onde é possível marcar como paga
 
 <div style="width: 100%; display: flex; align-items: center; justify-content: space-evenly;">  
 <img style="margin: 5px" src="https://raw.githubusercontent.com/gabeps2/my-billings-react-expo/master/preview/minhas-contas-1.png" width="270" height="600">
-<img style="margin: 5px" src="https://raw.githubusercontent.com/gabeps2/my-billings-react-expo/master/preview/minhas-contas-2.jpg" width="270" height="600">
-<img style="margin: 5px" src="https://raw.githubusercontent.com/gabeps2/my-billings-react-expo/master/preview/minhas-contas-3.jpg" width="270" height="600">
+<img style="margin: 5px" src="https://raw.githubusercontent.com/gabeps2/my-billings-react-expo/master/preview/minhas-contas-2.png" width="270" height="600">
+<img style="margin: 5px" src="https://raw.githubusercontent.com/gabeps2/my-billings-react-expo/master/preview/minhas-contas-3.png" width="270" height="600">
 <img style="margin: 5px" src="https://raw.githubusercontent.com/gabeps2/my-billings-react-expo/master/preview/minhas-contas-4.png" width="270" height="600">
-<img style="margin: 5px" src="https://raw.githubusercontent.com/gabeps2/my-billings-react-expo/master/preview/minhas-contas-5.jpg" width="270" height="600">
-<img style="margin: 5px" src="https://raw.githubusercontent.com/gabeps2/my-billings-react-expo/master/preview/minhas-contas-6.jpg" width="270" height="600">
+<img style="margin: 5px" src="https://raw.githubusercontent.com/gabeps2/my-billings-react-expo/master/preview/minhas-contas-5.png" width="270" height="600">
+<img style="margin: 5px" src="https://raw.githubusercontent.com/gabeps2/my-billings-react-expo/master/preview/minhas-contas-6.png" width="270" height="600">
   
   https://github.com/gabeps2/my-billings-react-expo/blob/master/preview/minhas-contas-1.png
 </div>
