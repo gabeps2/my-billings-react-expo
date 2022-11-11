@@ -1,6 +1,7 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { createContext } from "react";
-
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import _ from "underscore";
 export interface Billing {
   id: string;
   name: string;
@@ -16,10 +17,16 @@ interface CustomContextData {
   addNewBilling(billing: Billing): void;
   removeBilling(id: string): void;
   getBilling(id: string): Billing | undefined;
+  orderBillings(order: Order): void;
 }
 
 interface Props {
   children: React.ReactNode;
+}
+
+export enum Order {
+  DUE,
+  PRICE,
 }
 
 const CustomContext = createContext<CustomContextData>({} as CustomContextData);
@@ -30,15 +37,49 @@ const CustomContextProvider: React.FC<Props> = ({ children }) => {
 
   function addNewBilling(billing: Billing) {
     setBillings([...billings, billing]);
+    console.log(billings.length);
   }
 
   function removeBilling(id: string) {
-    setBillings(billings.filter((billing) => billing.id != id));
+    console.log("teste");
+    setBillings(billings.filter((billing) => billing.id !== id));
   }
 
   function getBilling(id: string): Billing | undefined {
     return billings.find((billing) => billing.id === id);
   }
+
+  function orderBillings(order: Order) {
+    setBillings(_.sortBy(billings, order === Order.DUE ? "date" : "value"));
+  }
+
+  useEffect(() => {
+    const storeData = async (billings: Billing[]) => {
+      try {
+        await AsyncStorage.setItem("@billings", JSON.stringify(billings));
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    console.log("save on cache")
+    storeData(billings);
+  }, [billings]);
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const value = await AsyncStorage.getItem("@billings");
+        if (value !== null) {
+          console.log(value)
+          setBillings(JSON.parse(value));
+        }
+      } catch (e) {
+        console.log(e);
+      }
+    };
+    console.log("get from cache");
+    getData();
+  }, []);
 
   return (
     <CustomContext.Provider
@@ -50,6 +91,7 @@ const CustomContextProvider: React.FC<Props> = ({ children }) => {
         addNewBilling,
         removeBilling,
         getBilling,
+        orderBillings,
       }}
     >
       {children}

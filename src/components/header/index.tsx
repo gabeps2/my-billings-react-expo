@@ -1,6 +1,5 @@
-import React from "react";
-import { View } from "react-native";
-import { useCustomContext } from "../../context";
+import React, { useEffect, useState } from "react";
+import { Order, useCustomContext } from "../../context";
 import {
   Container,
   HeaderText,
@@ -16,7 +15,12 @@ import SortIcon from "react-native-vector-icons/FontAwesome";
 import PlusIcon from "react-native-vector-icons/Entypo";
 
 export const Header = () => {
-  const { newBillClick, setNewBillClick } = useCustomContext();
+  const { newBillClick, setNewBillClick, orderBillings } = useCustomContext();
+  const [orderBy, setOrderBy] = useState<Order>(Order.DUE);
+
+  useEffect(() => {
+    orderBillings(orderBy);
+  }, [orderBy]);
 
   return (
     <Container>
@@ -24,9 +28,9 @@ export const Header = () => {
         <HeaderText> Minhas Contas </HeaderText>
       </HeaderTextContainer>
       <ButtonsContainer>
-        <FilterButton>
+        <FilterButton onPress={() => setOrderBy(orderBy === Order.DUE ? Order.PRICE : Order.DUE)}>
           <SortIcon name="sort" size={16} color="#3D424A" />
-          <ButtonText>Data de vencimento</ButtonText>
+          <ButtonText>{orderBy === Order.DUE ? "Data de vencimento" : "Valor"}</ButtonText>
         </FilterButton>
         <NewBillingButton
           onPress={() => {
