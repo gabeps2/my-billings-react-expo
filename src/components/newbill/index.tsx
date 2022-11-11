@@ -32,6 +32,7 @@ export const NewBill = () => {
 
   function validateForm() {
     if (name.length > 0 && value !== -1 && date.length > 0) {
+      setNewBillClick(!newBillClick);
       addNewBilling({ id: uuid.v1().toString(), name: name, value: value, date: toDate(date) });
     }
   }
