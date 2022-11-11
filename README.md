@@ -9,7 +9,7 @@ A aplicação foi projetada como um gerenciador de contas a pagar, nela é poss�
 A aplicação é baseada em somente uma tela, onde é possível marcar como paga, visualizar, adicionar e excluir contas. Também é possível ordena-lás pelo valor ou pela data de vencimento.
 
 <div style="width: 100%; display: flex; align-items: center; justify-content: space-evenly;">  
-<img style="margin: 5px" src="[https://raw.githubusercontent.com/gabeps2/my-billings-react-expo/master/preview/minhas-contas-1.png](https://raw.githubusercontent.com/gabeps2/my-billings-react-expo/master/preview/minhas-contas-1.png)" width="270" height="540">
+<img style="margin: 5px" src="https://raw.githubusercontent.com/gabeps2/my-billings-react-expo/master/preview/minhas-contas-1.png" width="270" height="540">
 <img style="margin: 5px" src="https://raw.githubusercontent.com/gabeps2/my-billings-react-expo/master/preview/minhas-contas-2.jpg" width="270" height="540">
 <img style="margin: 5px" src="https://raw.githubusercontent.com/gabeps2/my-billings-react-expo/master/preview/minhas-contas-3.jpg" width="270" height="540">
 <img style="margin: 5px" src="https://raw.githubusercontent.com/gabeps2/my-billings-react-expo/master/preview/minhas-contas-4.jpg" width="270" height="540">
